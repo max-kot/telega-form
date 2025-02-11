@@ -3,7 +3,7 @@
 exports.handler = async (event) => {
 	try {
 		const token = "7716038351:AAHoS7TU2CowMVuH3leMpdFaaxgbJu-eUcs"; // Замени на свой токен
-		const chatId = "t.me/mx_netlify_telega_bot";  // Замени на свой Chat ID
+		const chatId = "498218523";  // Замени на свой Chat ID
 		const data = JSON.parse(event.body);
 
 		const dataArray = Object.entries(data)
