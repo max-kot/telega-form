@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Telegram Forms</title>
+		<link rel="stylesheet" href="style/style.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<h1 class="title">💬 Send to telegram</h1>
+			<form class="form">
+				<div class="form__field">
+					<label class="form__label" for="#username">Enter your name</label>
+					<input
+						class="form__input"
+						type="text"
+						name="username"
+						id="username"
+					/>
+				</div>
+				<div class="form__field">
+					<label class="form__label" for="#phone">Enter your phone</label>
+					<input class="form__input" type="tel" name="phone" id="phone" />
+				</div>
+				<div class="form__field form__field--textarea">
+					<label class="form__label" for="#message">Enter your message</label>
+					<textarea
+						class="form__input form__textarea"
+						name="message"
+						id="message"
+					></textarea>
+				</div>
+				<button class="form__button" type="submit">Send</button>
+			</form>
+		</div>
+		<script>
+			document
+				.querySelector(".form")
+				.addEventListener("submit", async function (e) {
+					e.preventDefault();
+					const formData = new FormData(this);
+					const jsonData = Object.fromEntries(formData.entries());
+
+					const response = await fetch("/.netlify/functions/telegram", {
+						method: "POST",
+						body: JSON.stringify(jsonData),
+					});
+
+					if (response.ok) alert("Сообщение отправлено!");
+					else alert("Ошибка отправки!");
+				});
+		</script>
+	</body>
+</html>
