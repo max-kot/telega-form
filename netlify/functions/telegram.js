@@ -3,14 +3,14 @@
 exports.handler = async (event) => {
 	try {
 		const token = "7716038351:AAHoS7TU2CowMVuH3leMpdFaaxgbJu-eUcs"; // Замени на свой токен
-		const chatId = "498218523";  // Замени на свой Chat ID
+		const chatId = "-1001449215447";  // Замени на свой Chat ID
 		const data = JSON.parse(event.body);
 
 		const dataArray = Object.entries(data)
 		let message = `📩 Новая заявка с сайта!\n\n`;
 		//const message = `📩 Новая заявка с сайта!\n\nИмя: ${data.name}\nEmail: ${data.email}\nСообщение: ${data.message}`;
 		for (const [key, value] of dataArray) {
-			message += `${key}: ${value}`
+			message += `\n✅ ${key}: ${value}`
 		}
 
 		const url = `https://api.telegram.org/bot${token}/sendMessage`;
