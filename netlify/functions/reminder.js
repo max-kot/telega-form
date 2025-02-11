@@ -4,7 +4,7 @@ import path from 'path';
 
 const remindersFile = path.join(__dirname, "../../reminders.json");
 
-export const handler = async () => {
+exports.handler = async () => {
 	const reminders = loadReminders();
 
 	const now = new Date();

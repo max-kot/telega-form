@@ -19,8 +19,8 @@
 						id="username"
 					/>
 				</div>
-				<!--   -->
-				<div class="form__field" action="/.netlify/functions/telegram" method="POST">
+				<!-- action="/.netlify/functions/telegram" method="POST"  -->
+				<div class="form__field" >
 					<label class="form__label" for="#phone">Enter your phone</label>
 					<input class="form__input" type="tel" name="phone" id="phone" />
 				</div>
@@ -36,21 +36,21 @@
 			</form>
 		</div>
 		<script>
-			//document
-			//	.querySelector(".form")
-			//	.addEventListener("submit", async function (e) {
-			//		e.preventDefault();
-			//		const formData = new FormData(this);
-			//		const jsonData = Object.fromEntries(formData.entries());
+			document
+				.querySelector(".form")
+				.addEventListener("submit", async function (e) {
+					e.preventDefault();
+					const formData = new FormData(this);
+					const jsonData = Object.fromEntries(formData.entries());
 
-			//		const response = await fetch("/.netlify/functions/telegram", {
-			//			method: "POST",
-			//			body: JSON.stringify(jsonData),
-			//		});
+					const response = await fetch("/.netlify/functions/telegram", {
+						method: "POST",
+						body: JSON.stringify(jsonData),
+					});
 
-			//		if (response.ok) alert("Сообщение отправлено!");
-			//		else alert("Ошибка отправки!");
-			//	});
+					if (response.ok) alert("Сообщение отправлено!");
+					else alert("Ошибка отправки!");
+				});
 		</script>
 	</body>
 </html>

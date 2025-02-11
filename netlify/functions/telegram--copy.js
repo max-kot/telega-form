@@ -1,4 +1,4 @@
-export const handler = async (event) => {
+exports.handler = async (event) => {
 	try {
 		const token = "7716038351:AAHoS7TU2CowMVuH3leMpdFaaxgbJu-eUcs"; // Замени на свой токен
 		const chatId = "-1001449215447";  // Замени на свой Chat ID
