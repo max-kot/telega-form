@@ -1,5 +1,6 @@
 [build]
 	functions = "netlify/functions"
+	schedule = "*/1 * * * *"  # Проверяем напоминания каждую минуту
 
 [context.production.environment]
 	NODE_VERSION = "18"
